@@ -2,7 +2,7 @@
   connection: local
   become: true
 
-  pre-tasks:
+  pre_tasks:
     - name: update repositories
       apt:
         update_cache: yes
