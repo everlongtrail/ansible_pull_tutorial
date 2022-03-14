@@ -2,10 +2,11 @@
   connection: local
   become: true
 
+  pre-tasks:
+    - name: update repositories
+    apt:
+      update_cache: yes
+    changed_when: False
+
   tasks:
-  - name: install packages
-    package:
-      name: 
-        - htop
-        - mc
-        - tmux
+    - include: tasks/packages.yml
